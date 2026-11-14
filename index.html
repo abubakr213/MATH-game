@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">🧮 Math Games</div>
+
+    <div class="header-right">
+        <span class="gold">🪙 <b id="gold">100</b></span>
+
+        <select id="languageSelect">
+            <option value="uz">O‘zbekcha</option>
+            <option value="ru">Русский</option>
+        </select>
+
+        <button id="themeBtn" class="icon-btn">🌙</button>
+        <button id="logoutBtn" class="small-btn">Chiqish</button>
+    </div>
+</header>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+
+        <div class="player-card">
+            <div class="avatar" id="avatar">👤</div>
+            <h3 id="username">Player</h3>
+            <p id="level">1-daraja</p>
+
+            <div class="xp-track">
+                <div id="sidebarXPBar"></div>
+            </div>
+
+            <small><span id="sidebarXD">0</span> XD</small>
+        </div>
+
+        <nav>
+            <button class="nav-btn active" data-page="home">🏠 Bosh sahifa</button>
+            <button class="nav-btn" data-page="adventure">🗺️ Sarguzasht</button>
+            <button class="nav-btn" data-page="levels">🏆 Darajalar</button>
+            <button class="nav-btn" data-page="ranking">🥇 Reyting</button>
+            <button class="nav-btn" data-page="profile">👤 Profil</button>
+            <button class="nav-btn" data-page="stats">📊 Statistika</button>
+            <button class="nav-btn" data-page="shop">🛒 Do‘kon</button>
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <!-- HOME -->
+        <section id="home" class="page active">
+
+            <div class="welcome">
+                <div>
+                    <p class="eyebrow">Math Games olamiga xush kelibsiz!</p>
+                    <h1>Salom, <span id="homeUsername">Player</span>!</h1>
+                    <p>Bilimingizni oshiring va yangi darajalarni oching.</p>
+                </div>
+
+                <div class="welcome-character">🧙‍♂️</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>🏆</span>
+                    <p>Daraja</p>
+                    <h2 id="homeLevel">1</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>⚡</span>
+                    <p>XD</p>
+                    <h2 id="homeXD">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>🔥</span>
+                    <p>Seriya</p>
+                    <h2 id="homeStreak">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>✅</span>
+                    <p>Bajarilgan</p>
+                    <h2 id="homeDone">0</h2>
+                </div>
+            </div>
+
+            <h2>Fanlar</h2>
+
+            <div class="direction-grid">
+
+                <div class="direction-card">
+                    <span>➗</span>
+                    <h3>Arifmetika</h3>
+                    <p>Ochiq</p>
+                    <button class="primary-btn subject-btn"
+                            data-category="arithmetic">
+                        Boshlash
+                    </button>
+                </div>
+
+                <div class="direction-card">
+                    <span>📐</span>
+                    <h3>Algebra</h3>
+                    <p>Ochiq</p>
+                    <button class="primary-btn subject-btn"
+                            data-category="algebra">
+                        Boshlash
+                    </button>
+                </div>
+
+                <div class="direction-card">
+                    <span>📏</span>
+                    <h3>Geometriya</h3>
+                    <p>125-darajada ochiladi</p>
+                    <button class="primary-btn subject-btn"
+                            data-category="geometry">
+                        Qulflangan
+                    </button>
+                </div>
+
+                <div class="direction-card">
+                    <span>🧠</span>
+                    <h3>Logika</h3>
+                    <p>150-darajada ochiladi</p>
+                    <button class="primary-btn subject-btn"
+                            data-category="logic">
+                        Qulflangan
+                    </button>
+                </div>
+
+                <div class="direction-card">
+                    <span>📝</span>
+                    <h3>Testlar</h3>
+                    <p>100-darajada ochiladi</p>
+                    <button class="primary-btn subject-btn"
+                            data-category="tests">
+                        Qulflangan
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="adventure-banner">
+                <div>
+                    <h2>Katta sarguzasht boshlanmoqda!</h2>
+                    <p>Topshiriqlarni bajaring va mukofot oling.</p>
+                </div>
+
+                <button class="primary-btn" data-open="adventure">
+                    Boshlash
+                </button>
+            </div>
+
+        </section>
+
+        <!-- ADVENTURE -->
+        <section id="adventure" class="page">
+            <h1>🗺️ Sarguzasht</h1>
+            <p>Hududlarni oching va matematik topshiriqlarni bajaring.</p>
+
+            <div class="adventure-grid">
+                <div class="map-card">
+                    <span>🏔️</span>
+                    <h2>Tog‘lar</h2>
+                    <p>Birinchi sinovlar</p>
+                    <button id="startAdventure" class="primary-btn">
+                        Boshlash
+                    </button>
+                </div>
+
+                <div class="map-card">
+                    <span>🌲</span>
+                    <h2>Sehrli o‘rmon</h2>
+                    <p>Yangi sarguzashtlar</p>
+                    <button class="primary-btn" disabled>
+                        Qulflangan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEVELS -->
+        <section id="levels" class="page">
+            <h1>🏆 Darajalar</h1>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p>Ochiq darajalar</p>
+                    <h2 id="unlockedCount">1</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>O‘tilgan darajalar</p>
+                    <h2 id="levelDoneCount">0</h2>
+                </div>
+            </div>
+
+            <div id="levelsList" class="levels-list"></div>
+        </section>
+
+        <!-- GAME -->
+        <section id="game" class="page">
+
+            <button id="backToGamePage" class="secondary-btn">
+                ← Orqaga
+            </button>
+
+            <div class="game-card">
+
+                <div class="game-top">
+                    <span id="gameProgress">1 / 10</span>
+                    <span id="gameCategory">Arifmetika</span>
+                    <span id="gameTimer">02:23</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+                <div class="game-character" id="gameCharacter">🧙‍♂️</div>
+
+                <h1 id="gameTitle">Matematika</h1>
+                <p id="gameStory">Darajangiz kuchli! O‘zingizga ishoning!</p>
+
+                <h2 id="question">12 + 8 = ?</h2>
+
+                <div id="answers" class="answers-grid"></div>
+
+                <p id="answerMessage" class="answer-message"></p>
+
+                <button id="nextQuestion" class="primary-btn" hidden>
+                    Keyingi savol
+                </button>
+
+            </div>
+        </section>
+
+        <!-- TEST SETUP -->
+        <section id="testSetup" class="page">
+            <h1>Test sozlamalari</h1>
+
+            <div class="settings-card">
+
+                <label for="testAudience">Kim uchun test?</label>
+                <select id="testAudience">
+                    <option value="school">Maktab o‘quvchisi</option>
+                    <option value="teacher">O‘qituvchi</option>
+                    <option value="university">Universitet talabasi</option>
+                </select>
+
+                <div id="schoolGradeBox">
+                    <label for="schoolGrade">Sinfni tanlang</label>
+                    <select id="schoolGrade">
+                        <option value="1">1-sinf</option>
+                        <option value="2">2-sinf</option>
+                        <option value="3">3-sinf</option>
+                        <option value="4">4-sinf</option>
+                        <option value="5">5-sinf</option>
+                        <option value="6" selected>6-sinf</option>
+                        <option value="7">7-sinf</option>
+                        <option value="8">8-sinf</option>
+                        <option value="9">9-sinf</option>
+                        <option value="10">10-sinf</option>
+                        <option value="11">11-sinf</option>
+                    </select>
+                </div>
+
+                <div id="teacherLevelBox" hidden>
+                    <label for="teacherLevel">O‘qituvchi darajasi</label>
+                    <select id="teacherLevel">
+                        <option value="beginner">Boshlang‘ich</option>
+                        <option value="middle">O‘rta</option>
+                        <option value="advanced">Yuqori</option>
+                        <option value="expert">Mutaxassis</option>
+                    </select>
+                </div>
+
+                <div id="courseBox" hidden>
+                    <label for="universityCourse">Kursni tanlang</label>
+                    <select id="universityCourse">
+                        <option value="1">1-kurs</option>
+                        <option value="2">2-kurs</option>
+                        <option value="3">3-kurs</option>
+                        <option value="4">4-kurs</option>
+                    </select>
+                </div>
+
+                <label for="testDifficulty">Qiyinlik</label>
+                <select id="testDifficulty">
+                    <option value="easy">Oson</option>
+                    <option value="medium" selected>O‘rta</option>
+                    <option value="hard">Qiyin</option>
+                </select>
+
+                <label for="testCount">Savollar soni</label>
+                <select id="testCount">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select>
+
+                <button id="beginTest" class="primary-btn">
+                    Testni boshlash
+                </button>
+
+            </div>
+        </section>
+
+        <!-- RANKING -->
+        <section id="ranking" class="page">
+            <h1>🥇 Reyting</h1>
+            <p>O‘yinchilar natijalari bo‘yicha reyting.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>O‘yinchi</th>
+                            <th>Daraja</th>
+                            <th>XD</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rankingList"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PUBLIC PROFILE -->
+        <section id="publicProfile" class="page">
+            <button class="secondary-btn" id="backToRanking">
+                ← Orqaga
+            </button>
+            <div id="publicProfileContent"></div>
+        </section>
+
+        <!-- PROFILE -->
+        <section id="profile" class="page">
+            <h1>👤 Profil</h1>
+
+            <div class="profile-card">
+                <div class="avatar large" id="profileAvatar">👤</div>
+                <h2 id="profileName">Player</h2>
+                <p>Daraja: <b id="profileLevel">1</b></p>
+                <p>🪙 <b id="profileGold">100</b></p>
+                <p>⚡ <b id="profileXD">0 XD</b></p>
+            </div>
+
+            <div class="settings-card">
+                <h2>Akkaunt sozlamalari</h2>
+
+                <label for="editUsername">Yangi ism</label>
+                <input id="editUsername" type="text" placeholder="Yangi ism">
+
+                <label for="editLogin">Yangi login</label>
+                <input id="editLogin" type="text" placeholder="Yangi login">
+
+                <button id="saveProfileBtn" class="primary-btn">
+                    Saqlash
+                </button>
+
+                <hr>
+
+                <h2>Parolni o‘zgartirish</h2>
+
+                <input id="oldPassword" type="password" placeholder="Eski parol">
+                <input id="newPassword" type="password" placeholder="Yangi parol">
+                <input id="confirmPassword" type="password" placeholder="Yangi parolni takrorlang">
+
+                <button id="changePasswordBtn" class="primary-btn">
+                    O‘zgartirish
+                </button>
+
+                <p id="profileMessage"></p>
+                <p id="passwordMessage"></p>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section id="stats" class="page">
+            <h1>📊 Statistika</h1>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p>Daraja</p>
+                    <h2 id="statsLevel">1</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>XD</p>
+                    <h2 id="statsXD">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Bajarilgan</p>
+                    <h2 id="statsDone">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Seriya</p>
+                    <h2 id="statsStreak">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOP -->
+        <section id="shop" class="page">
+            <h1>🛒 Do‘kon</h1>
+
+            <div class="shop-grid">
+                <div class="shop-card">
+                    <span>🧊</span>
+                    <h2>Muzlatkich</h2>
+                    <p>Kunlik seriyani saqlab qoladi.</p>
+                    <b>150 🪙</b>
+                    <button class="buy-btn" data-item="freeze" data-price="150">
+                        Sotib olish
+                    </button>
+                </div>
+
+                <div class="shop-card">
+                    <span>🎭</span>
+                    <h2>Yangi avatar</h2>
+                    <p>Profil avataringizni yangilang.</p>
+                    <b>250 🪙</b>
+                    <button class="buy-btn" data-item="avatar" data-price="250">
+                        Sotib olish
+                    </button>
+                </div>
+
+                <div class="shop-card">
+                    <span>📦</span>
+                    <h2>Topshiriqlar to‘plami</h2>
+                    <p>Qo‘shimcha topshiriqlar.</p>
+                    <b>50 🪙</b>
+                    <button class="buy-btn" data-item="task" data-price="50">
+                        Sotib olish
+                    </button>
+                </div>
+            </div>
+
+            <p id="shopMessage" class="shop-message"></p>
+
+            <!-- Promo area app.js tomonidan qo‘shiladi -->
+        </section>
+
+    </main>
+</div>
+
+<div class="theme-panel">
+    <span>Rang:</span>
+    <button class="color-btn" data-color="blue" title="Blue"></button>
+    <button class="color-btn" data-color="pink" title="Pink"></button>
+    <button class="color-btn" data-color="purple" title="Purple"></button>
+    <button class="color-btn" data-color="green" title="Green"></button>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
